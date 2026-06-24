@@ -1,66 +1,84 @@
-# dictionary = one of the 4 collection types in python
-# dictionary = a collection of {key:value} pair
-# ordered and changeable , no duplicates
+"""
+This script demonstrates the usage of Python dictionaries.
 
-capitals = {"USA":"Washington DC","India":"New Delhi","China":"Beijing","Nepal":"Kathmandu"}
+A dictionary is a mutable, ordered collection of key-value pairs.
+Keys must be unique and immutable (e.g., strings, numbers, tuples).
+"""
 
-#Attributes and methods of a dictionary
-#print(dir(capitals))
 
-# Decription of sttributes and methods of a dictionary
-#print(help(capitals))
+def demonstrate_accessing():
+    """Shows how to access items from a dictionary."""
+    print("\n--- Accessing Items ---")
+    capitals = {"USA": "Washington DC", "India": "New Delhi", "China": "Beijing"}
+    print(f"Original dictionary: {capitals}")
 
-#To get value from a dictionary
-#print(capitals.get("India"))
+    # Using .get() is safe because it returns None for missing keys
+    india_capital = capitals.get("India")
+    print(f"The capital of India is: {india_capital}")
 
-#In case of no such key in the dictionary
-#print(capitals.get("Japan"))
+    japan_capital = capitals.get("Japan")
+    print(f"The capital of Japan is: {japan_capital}")
 
-#if capitals.get("India"):
-#    print("Thats a valid capital")
-#else:
-#    print("No such capital exists")
+    # You can also provide a default value for .get()
+    default_value = "not found"
+    japan_capital_default = capitals.get("Japan", default_value)
+    print(f"The capital of Japan (with default) is: {japan_capital_default}")
 
-#To update the dictionary (add a new {key:value} pair)
-#capitals.update({"Antarctica":"Shangrila"})
-#print(capitals)
 
-#To update the dictionary (update a new value to {key:value} pair)
-#capitals.update({"India":"Ayodhya"})
-#print(capitals)
+def demonstrate_updating():
+    """Shows how to add or update items in a dictionary."""
+    print("\n--- Updating Items ---")
+    capitals = {"USA": "Washington DC", "India": "New Delhi", "China": "Beijing"}
+    print(f"Original dictionary: {capitals}")
 
-#To remove a key from the dictionary 
-#Can only remove by entering key not the value to it
-#capitals.pop("New Delhi")
-#print(capitals)
+    # Add a new key-value pair
+    capitals.update({"Germany": "Berlin"})
+    print(f"After adding Germany: {capitals}")
 
-# To remove latest item fromt the dictionary
-#capitals.popitem()
-#print(capitals)
+    # Update an existing value
+    capitals.update({"India": "Newer Delhi"})
+    print(f"After updating India: {capitals}")
 
-#To remove the key value pairs from entire dictionary
-#capitals.clear()
-#print(capitals)
 
-#To get Keys from the dictionary
-#Will return an object which resembles a list
-#a=capitals.keys()
-#print(a)
+def demonstrate_removing():
+    """Shows how to remove items from a dictionary."""
+    print("\n--- Removing Items ---")
+    capitals = {"USA": "Washington DC", "India": "New Delhi", "China": "Beijing"}
+    print(f"Original dictionary: {capitals}")
 
-#for a in capitals.keys():
-#    print(a)
+    # Remove a specific item by key using pop()
+    removed_item = capitals.pop("USA")
+    print(f"Removed '{removed_item}' using pop('USA'). Dictionary is now: {capitals}")
 
-#To get Values from the dictionary
-#Will return an object which resembles a list
-#a=capitals.values()
-#print(a)
+    # Remove the last inserted item using popitem()
+    last_item = capitals.popitem()
+    print(f"Removed '{last_item}' using popitem(). Dictionary is now: {capitals}")
 
-#for a in capitals.values():
-#    print(a)
+    # Clear all items from the dictionary
+    capitals.clear()
+    print(f"After clear(): {capitals}")
 
-# Items method to get dictionary object which resembles a 2d list of tuples
-#items = capitals.items()
-#print(items)
 
-for key,value in capitals.items():
-    print(f"{key}:{value}")
+def demonstrate_iteration():
+    """Shows different ways to iterate over a dictionary."""
+    print("\n--- Iterating Over a Dictionary ---")
+    capitals = {"USA": "Washington DC", "India": "New Delhi", "China": "Beijing"}
+
+    print("\nIterating over keys:")
+    for country in capitals.keys():
+        print(country)
+
+    print("\nIterating over values:")
+    for capital in capitals.values():
+        print(capital)
+
+    print("\nIterating over key-value pairs (items):")
+    for country, capital in capitals.items():
+        print(f"The capital of {country} is {capital}")
+
+
+if __name__ == "__main__":
+    demonstrate_accessing()
+    demonstrate_updating()
+    demonstrate_removing()
+    demonstrate_iteration()

@@ -13,7 +13,7 @@ This project serves as a personal knowledge base. Each folder is dedicated to a 
 As this journey progresses, this section will list all the topics documented in this repository.
 
 *   **[Dictionaries](./Dictionary/)**: Exploring Python's `dict` type, including creation, access, iteration, and common methods.
-*   **Syntax**: Covering Python's basic syntax, including `print()`, `input()`, loops, and statements.
+*   **[Syntax](./Syntax/)**: Covering Python's basic syntax, including `print()`, `input()`, loops, and statements.
 *   *(More topics to be added...)*
 
 ## How to Use

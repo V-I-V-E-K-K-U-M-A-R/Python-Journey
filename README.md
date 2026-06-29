@@ -14,7 +14,7 @@ As this journey progresses, this section will list all the topics documented in 
 
 *   **[Dictionaries](./Dictionary/)**: Exploring Python's `dict` type, including creation, access, iteration, and common methods.
 *   **[Syntax](./Syntax/)**: Covering Python's basic syntax, including `print()`, `input()`, loops, and statements.
-*   **Problem Solving**: A collection of solutions to various coding problems.
+*   **[Problem Solving](./ProblemSolving/)**: A collection of solutions to various coding problems.
 *   *(More topics to be added...)*
 
 ## How to Use
